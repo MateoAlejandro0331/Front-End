@@ -1,0 +1,45 @@
+Que es JSX:
+es una extencion de lenguaje diseñada por facebook para react
+
+Parece JS, pero muestra codigo HTML y basicamente es un lenguaje de template que muestra
+HTML pero tiene todas las funcioned de javascript
+
+
+Reglas
+    - Etiquetas de solo apertura:
+        <input class="mateo" />
+    - siempre se retorna codigo html, es lo que se muestra en el navegador
+    - solo se puede retornar un elemento, es decir un <div> y si solo se necesita crear el
+    div se puede usar <> </>
+    - no se pueden utilizar if, solo ternarios
+
+Notas:
+    - Un componente es una funcion y todos requieren un return
+
+    Hooks:
+    - El State es una variable que guarda el estado de la aplicacion en react, 
+    el state puede usarse solo en un componente, o tambien puede estar en diferentes componentes
+    - Es lo primero que se inicializa en los compontes
+    - No se deben colocar dentro de condicionales y tampoco despues del return (declaracion)
+        declaracion: const [nombre, setNombre] = useState('hook')
+        useState retorna el estado del componente, la variable nombre almacena su valor, y con 
+        la funcion setNombre se puede modificar el valor, no se puede modificar el valor directamente
+        en la variable, solo usando la funcion para modificar la variable
+    Props: 
+        - sirven para usar las variables state en mas de un componente, o archivos jsx, cuando se declara un useState
+        solo sirve en ese componente, con los props se pueden importar en los demas componentes
+        - Los props se pasan del padre al hijo, nunca al reves
+        para pasar componentes se utilizan palabras reservadas
+                function Header (props) {}
+            se le puede aplicar destructuring 
+                function Header ({ numbreVariable, ... }) {}
+        los props se declaran en el padre (App.jsx)
+            <Header 
+                numeros={ 1 }
+                isAdmin={ true }
+                fn={functionName} // se pueden pasar funciones
+            />
+        puedo pasar valores del hijo al padre creando una funcion que reciba parametros, importandole en el hijo, 
+        pasarle el parametro, y esta funcion, en el padre recible la variable del hijo. Esto quiere decir que los
+        valores se envian indirectamente
+        
